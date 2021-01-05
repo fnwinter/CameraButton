@@ -8,6 +8,7 @@ class CameraButton(tk.Frame):
         self.master = master
         self.pack()
         self.columnconfigure(0, weight = 1)
+        self.remote_connection = tk.IntVar()
         self.create_widgets()
 
     def create_widgets(self):
@@ -16,7 +17,7 @@ class CameraButton(tk.Frame):
         self.connectButton["command"] = self.connection
         self.connectButton.grid(row=0, column=0, sticky = tk.W + tk.E, columnspan=2)
 
-        self.remoteCheckButton = tk.Checkbutton(self)
+        self.remoteCheckButton = tk.Checkbutton(self, variable=self.remote_connection)
         self.remoteCheckButton["text"] = "Remote connection"
         self.remoteCheckButton.grid(row=0, column=2)
 
@@ -44,6 +45,7 @@ class CameraButton(tk.Frame):
 
     def connection(self):
         print("connect")
+        print(self.remote_connection.get())
 
     def capture(self):
         print("capture")
