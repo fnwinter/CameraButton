@@ -1,2 +1,4 @@
 #!/bin/bash
-pyinstaller --onefile --noconsole ./source/CameraButton.py
+pushd ./source
+pyinstaller --icon=./camera.ico --onefile --noconsole ./CameraButton.py
+popd

@@ -1,5 +1,5 @@
+/.vs
 /venv
-/dist
-/build
+/source/build
 /source/__pycache__
 CameraButton.spec

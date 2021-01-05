@@ -1,4 +1,5 @@
 import tkinter as tk
+import os
 import subprocess
 import time
 import threading
@@ -22,7 +23,12 @@ class CameraButton(tk.Frame):
         self.connectButton = tk.Button(self)
         self.connectButton["text"] = "Connect"
         self.connectButton["command"] = self.connection
-        self.connectButton.grid(row=0, column=0, sticky = tk.W + tk.E, columnspan=2)
+        self.connectButton.grid(row=0, column=0, sticky = tk.W + tk.E, columnspan=1)
+
+        self.killButton = tk.Button(self)
+        self.killButton["text"] = "Kill svr"
+        self.killButton["command"] = self.kill_server
+        self.killButton.grid(row=0, column=1, sticky = tk.W + tk.E, columnspan=1)
 
         self.remoteCheckButton = tk.Checkbutton(self, variable=self.remote_connection)
         self.remoteCheckButton["text"] = "Remote connection"
@@ -51,15 +57,14 @@ class CameraButton(tk.Frame):
         self.stopButton.grid(row=3, column=2, sticky = tk.W + tk.E)
 
     def connection(self):
+        subprocess.check_output("adb usb")
+        time.sleep(3)
         if self.remote_connection.get():
             # remote connect
             print("remote connect")
-            subprocess.check_output("adb usb")
-            time.sleep(3)
             self.client = AdbClient()
             self.device = self.client.devices()[0]
             address = self.get_ip_addr()
-
             subprocess.check_output("adb tcpip 5678")
             time.sleep(5)
             self.client = AdbClient("127.0.0.1", 5037)
@@ -72,7 +77,9 @@ class CameraButton(tk.Frame):
             self.device = self.client.devices()[0]
 
     def kill_server(self):
-        subprocess.check_output("adb kill-server")
+        os.system("adb kill-server")
+        time.sleep(3)
+        os.system("adb start-server")
 
     def capture(self):
         print("capture")
