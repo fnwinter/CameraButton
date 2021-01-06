@@ -14,7 +14,7 @@
 - Connect : adb 연결
 - Remote connection : 같은 공유기망에서 무선으로 접속(유선 연결 후 케이블 제거)
 - Kill server : 접속이 안될 때 adb 서버 재시작
-- scrcpy : 안드로이드 화면 보여주는 프로그램 실행 (실행한 해줌)
+- scrcpy : 안드로이드 화면 보여주는 프로그램 실행 (실행만 해줌)
 - Capture : 카메라 버튼 눌러줌
 - Tick : 카메라 버튼 시간 간격 (초)
 - Start/Stop : 타이머 시작 / 중지
