@@ -33,7 +33,7 @@ class CameraButton(tk.Frame):
 
         # row = 1
         self.killButton = tk.Button(self)
-        self.killButton["text"] = "Kill svr"
+        self.killButton["text"] = "Kill server"
         self.killButton["command"] = self.kill_server
         self.killButton.grid(row=1, column=0, sticky = tk.W + tk.E, columnspan=1)
 
