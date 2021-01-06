@@ -1,13 +1,13 @@
 # CameraButton
-- Android Camera Button
-    - 북스캔할 때 자동적으로 카메라 버튼 눌러주는 프로그램
+- Android Camera Button :camera: :red_circle:
+    - :books: 북 스캔할 때 자동적으로 카메라 버튼 눌러주는 프로그램
 
 ## 필요한 프로그램
-- vFlat [Link to Store](https://play.google.com/store/apps/details?id=com.voyagerx.scanner)
-- Optional : Chocolatey [Link](https://chocolatey.org/)
-- Android platform-tools
+- :iphone: vFlat [Link to Store](https://play.google.com/store/apps/details?id=com.voyagerx.scanner)
+- :chocolate_bar: Optional : Chocolatey [Link](https://chocolatey.org/)
+- :computer: Android platform-tools
     - choco install adb
-- scrcpy [Github Link](https://github.com/Genymobile/scrcpy)
+- :computer:scrcpy [Github Link](https://github.com/Genymobile/scrcpy)
     - choco install scrcpy
 
 ## 사용법
@@ -20,7 +20,7 @@
 - Start/Stop : 타이머 시작 / 중지
 
 ## 다운로드
-- [Link](https://github.com/fnwinter/CameraButton/blob/main/source/dist/CameraButton.exe)
+- [:arrow_down: Link](https://github.com/fnwinter/CameraButton/blob/main/source/dist/CameraButton.exe)
     - 윈도우에서 위험하다고 경고 뜨지만 무시하고 실행하세요. 아니면 build.sh 돌려서 직접 빌드 하셔도 됩니다.
     - 이름: CameraButton.exe
     - 크기: 8725100 바이트 (8520 KiB)
